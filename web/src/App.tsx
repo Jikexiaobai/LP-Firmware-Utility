@@ -40,14 +40,14 @@ const App = () => {
       autorun(() => {
         if (wasmStore.available === undefined)
           noticeStore.show({
-            text: "Loading...",
+            text: "加载中...",
             showProgress: true,
             dismissable: false,
           });
         else if (wasmStore.available === true) noticeStore.hide();
         else
           noticeStore.show({
-            text: "Please use a browser that supports WebAssembly (eg. Chrome)",
+            text: "请使用支持 WebAssembly 的浏览器（例如(最新版):Chrome浏览器、QQ浏览器）",
           });
       }),
     [noticeStore, wasmStore.available]
