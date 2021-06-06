@@ -72,7 +72,7 @@ const App = () => {
               <Notice />
             ) : (
               <>
-                <TransitionRoute path="/firmware" component={'刷固件'} />
+                <TransitionRoute path="/firmware" component={Firmware} />
                 <TransitionRoute path="/palette" component={Palette} />
                 <TransitionRoute path="/modes" component={Modes} />
               </>
