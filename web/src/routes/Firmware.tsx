@@ -72,10 +72,10 @@ const Firmware = () => {
           !deviceIsBLForFW(launchpadStore.launchpad.type, targetLp)
         )
           noticeStore.show({
-            text: `Please connect a ${targetLp} in bootloader mode to continue flashing.`,
+            text: `请在引导加载程序模式下连接 ${targetLp} 以继续闪烁。`,
             dismissable: true,
             svg: `./svg/${svgs[selectedLp]}.svg`,
-            bl: `You can enter the bootloader by holding ${bltext[selectedLp]} while turning your Launchpad on.`,
+            bl: `您可以通过在打开 Launchpad 的同时 ${bltext[selectedLp]} 来进入引导加载程序`, //您可以通过在打开 Launchpad 的同时按住 Capture MIDI 按钮来进入引导加载程序。
             callback: cancelFlash as () => void,
           });
       } catch (e) {
@@ -176,7 +176,7 @@ const Firmware = () => {
               <div
                 data-tip={
                   type === PatchTypes.ApolloFastLED
-                    ? `In Apollo Studio 1.8.1 or newer, applying this mod to your firmware will allow for significantly faster light effects.\n This mod doesn't otherwise change the behavior of your Launchpad when using it with other software.`
+                    ? `在 Apollo Studio 1.8.1 或更高的版本中，将此 mod 应用到您的固件将允许显着更快的灯光效果。\n 当与其他软件(如Ableton live)一起使用时，此 mod 不会以其他方式改变 Launchpad 的工作。`
                     : undefined
                 }
               >
@@ -211,9 +211,9 @@ const Firmware = () => {
         FlashableFirmwares.LPPRO,
       ] as FlashableFirmwares[]).includes(uiStore.selectedFirmware) && (
         <p className="opacity-50 text-base text-center">
-          Looking for Apollo Studio Fast LED Mod?
+          您正在寻找 Apollo Studio 快速 LED 模组？
           <br />
-          It's built into CFW by default!
+          默认情况下，它内置在了 CFW 中！
           <br />
         </p>
       )}
@@ -250,7 +250,7 @@ const Firmware = () => {
         }
         disabled={!launchpadStore.available}
       >
-        Update
+        开始更新
       </Button>
 
       <input
@@ -274,20 +274,20 @@ const Firmware = () => {
           }
           className="opacity-75 cursor-pointer underline"
         >
-          download
+          下载固件
         </span>
       </p>
 
       {isWindows && (
         <p className="pt-4">
-          <span className="opacity-50">Don't forget to install </span>
+          <span className="opacity-50">开始之前，请不要忘记安装</span>
           <a
             href="https://github.com/mat1jaczyyy/apollo-studio/raw/master/Publish/novationusbmidi.exe"
             target="_blank"
             rel="noopener noreferrer"
             className="opacity-75 underline"
           >
-            Novation's USB driver!
+            Novation官方的USB驱动程序
           </a>
         </p>
       )}
