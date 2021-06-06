@@ -51,7 +51,7 @@ const Modes = () => {
         try {
           modeStore.loadMode(new Uint8Array(arr));
         } catch (e) {
-          setModeError("Invalid mode file: " + e);
+          setModeError("无效的模式文件： " + e);
         }
       });
     },
@@ -151,14 +151,14 @@ const Modes = () => {
   return useObserver(() => (
     <RouteContainer {...{ ...getRootProps(), lightBg }}>
       <div>
-        <Button onClick={() => fileRef.current?.click()}>Import</Button>
+        <Button onClick={() => fileRef.current?.click()}>输入</Button>
         <Button
           disabled={!modeStore.modeBinary}
           onClick={() =>
             saveCustomMode(modeStore.modeBinary!, modeStore.modeName!)
           }
         >
-          Export
+          输出
         </Button>
       </div>
       <input
@@ -172,8 +172,8 @@ const Modes = () => {
       <p className={clsx("text-lg", modeError && "text-red-500")}>
         {modeError ||
           (modeStore.modeName
-            ? `Loaded Mode: ${modeStore.modeName}`
-            : "No mode loaded!")}
+            ? `加载模式： ${modeStore.modeName}`
+            : "没有加载模式！")}
       </p>
       <Launchpad size={300} colors={modeStore.modeColors} />
       <div className="flex items-center justify-center text-xl space-x-2">
@@ -182,10 +182,10 @@ const Modes = () => {
           checked={modeStore.allowLEDFeedback}
           onChange={(e) => (modeStore.allowLEDFeedback = e.target.checked)}
         />
-        <p>Allow External LED Feedback</p>
+        <p>允许外部 LED 反馈</p>
       </div>
       <div className="flex items-center justify-center text-xl">
-        <p>Index:</p>
+        <p>指数:</p>
         <select
           className="p-1 mx-1"
           value={index}
@@ -205,7 +205,7 @@ const Modes = () => {
         {lpStore.launchpad &&
           [LaunchpadTypes.LPX, LaunchpadTypes.LPMINIMK3].includes(
             lpStore.launchpad.type
-          ) && <Button onClick={downloadXMode}>Download</Button>}
+          ) && <Button onClick={downloadXMode}>下载</Button>}
         <Button
           disabled={
             !modeStore.modeBinary ||
@@ -214,7 +214,7 @@ const Modes = () => {
           }
           onClick={uploadMode}
         >
-          Upload
+          上传
         </Button>
       </div>
     </RouteContainer>
