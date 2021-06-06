@@ -16,10 +16,10 @@ const Header = ({ disabled }: any) => {
 
   return useObserver(() => (
     <nav className="w-full h-16 flex flex-row items-stretch justify-between relative">
-      <div class="flex-1 flex flex-row items-center px-4">
-    <p class="font-bold text-2xl">在线更新LaunchPad固件</p>
-    <p class="font-bold text-2xl">&nbsp;&nbsp;<a href="https://dongyansong.com/">董岩松博客赞助</a></p>
-    </div>
+      <div className="flex-1 flex flex-row items-center px-4">
+        <p className="font-bold text-2xl">在线更新LaunchPad固件</p>
+        <p className="font-bold text-2xl">&nbsp;&nbsp;<a href="https://dongyansong.com/">董岩松博客赞助</a></p>
+      </div>
       <div
         className="flex flex-row justify-center text-xl text-center"
       >
