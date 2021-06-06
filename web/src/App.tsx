@@ -72,7 +72,7 @@ const App = () => {
               <Notice />
             ) : (
               <>
-                <TransitionRoute path="/firmware" component={Firmware} />
+                <TransitionRoute path="/firmware" component={'刷固件'} />
                 <TransitionRoute path="/palette" component={Palette} />
                 <TransitionRoute path="/modes" component={Modes} />
               </>
@@ -81,15 +81,15 @@ const App = () => {
         </SwitchTransition>
         <span className="w-full bottom-0 pb-2 text-center absolute">
           <span className="opacity-25">
-            built by Brendonovich & mat1jaczyyy ©{" "}
+            由 Brendonovich & mat1jaczyyy 编写©{" "}
           </span>
           <a
-            href="https://github.com/mat1jaczyyy/LP-Firmware-Utility"
+            href="https://dongyansong.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="opacity-75 underline"
           >
-            github
+            董岩松博客赞助
           </a>
         </span>
       </div>
