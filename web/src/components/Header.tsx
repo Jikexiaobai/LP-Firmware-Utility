@@ -11,7 +11,7 @@ const Header = ({ disabled }: any) => {
   const lpStore = useStore(({ launchpads }) => launchpads);
 
   useEffect(() => {
-    document.title = "LP Utility | " + headers[pathname.slice(1)];
+    document.title = "在线更新LaunchPad固件 | " + headers[pathname.slice(1)] +"董岩松博客";
   }, [pathname]);
 
   return useObserver(() => (
