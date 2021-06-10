@@ -40,7 +40,7 @@ const App = () => {
       autorun(() => {
         if (wasmStore.available === undefined)
           noticeStore.show({
-            text: "加载中...",
+            text: "加载中...(请在1~2秒后刷新该页面)",
             showProgress: true,
             dismissable: false,
           });
